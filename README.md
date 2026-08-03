@@ -23,7 +23,8 @@ Xingtai Gui<sup>1</sup>, Meijie Zhang<sup>2</sup>, Tianyi Yan<sup>1</sup>, Wench
 ---
 
 ## News
-**[2026.3.17]** Release the Arxiv Ppaer\
+**[2026.8.3]** Release the WorldDrive training script and latest checkpoint\
+**[2026.3.17]** Release the Arxiv Paper\
 **[2026.3.15]** Release the WorldDrive Evaluation and Visualization script\
 **[2026.3.14]** Release the WorldDrive Project! 
 
@@ -72,6 +73,11 @@ We provide detailed guides to help you quickly set up, and evaluate WorldDrive:
 # worlddrive_stage2_train.ckpt planner with future-aware rewarder checkpoint
 # worldtraj_stage1_1024_tadwm.pkl TA-DWM pretrain checkpoint
 ```
+
+| Checkpoint | Link | Performance | 
+| --- | --- | --- |
+| worlddrive_stage1 | [HF](https://huggingface.co/tabguigui/WorldDrive/blob/main/worlddrive_stage1_train_87p7_pdms.ckpt) | 87.7 |
+| worlddrive_stage2(FAR) | [HF](https://huggingface.co/tabguigui/WorldDrive/blob/main/worlddrive_stage2_train_89p2_pdms.ckpt) | 89.2 |
 
 
 ## Quick Evaluation
@@ -130,6 +136,11 @@ Download the corresponding ta-dwm checkpoint training on NAVSIM (*worldtraj_stag
 #### Step3: train planner
 ```bash
 sh scripts/training/run_worlddrive_planner.sh
+```
+
+#### Step4(optional): train future-aware rewarder
+```bash
+sh scripts/training/run_worlddrive_far.sh
 ```
 
 
